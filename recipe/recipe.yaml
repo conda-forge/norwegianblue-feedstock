@@ -31,15 +31,15 @@ requirements:
   run:
     - python >=${{ python_min }}
     - argcomplete >=3.4
-    - httpx >=0.19
     - platformdirs
     - prettytable >=3.16
     - pytablewriter >=0.63
     # from pytablewriter[html]
     - dominate >=2.1.5
-    - python-dateutil
     - python-slugify
     - termcolor >=2.1
+    - urllib3 >=2
+    - yaspin
 
 tests:
   - python:
