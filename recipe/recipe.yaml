@@ -32,11 +32,11 @@ requirements:
     - python >=${{ python_min }}
     - argcomplete >=3.4
     - platformdirs
-    - prettytable >=3.16
+    - prettytable >=3.18
     - pytablewriter >=0.63
     # from pytablewriter[html]
-    - dominate >=2.1.5
     - python-slugify
+    - pyyaml
     - termcolor >=2.1
     - urllib3 >=2
     - yaspin
@@ -46,11 +46,12 @@ tests:
       imports:
         - norwegianblue
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
-        - pip
     script:
       - eol --help
       - norwegianblue --help
