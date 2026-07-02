@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: norwegianblue
-  version: "0.24.1"
+  version: "0.25.0"
   python_min: "3.10"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/norwegianblue-${{ version }}.tar.gz
-  sha256: 34a33b2eb07bd5e8c24b57722802fd0ce06a44d8cb1738d1cfef6a115298c074
+  sha256: 5c75a15d19da573f23294a91de7c22517cd70d9ae3f9bb2a20c19884b110e87e
 
 build:
   number: 0
@@ -32,11 +32,11 @@ requirements:
     - python >=${{ python_min }}
     - argcomplete >=3.4
     - platformdirs
-    - prettytable >=3.16
+    - prettytable >=3.18
     - pytablewriter >=0.63
     # from pytablewriter[html]
-    - dominate >=2.1.5
     - python-slugify
+    - pyyaml
     - termcolor >=2.1
     - urllib3 >=2
     - yaspin
@@ -46,11 +46,12 @@ tests:
       imports:
         - norwegianblue
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
-        - pip
     script:
       - eol --help
       - norwegianblue --help
