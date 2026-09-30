@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: norwegianblue
   version: "0.26.0"
-  python_min: "3.10"
+  python_min: "3.11"
 
 package:
   name: ${{ name|lower }}
@@ -33,8 +33,6 @@ requirements:
     - argcomplete >=3.4
     - platformdirs
     - prettytable >=3.18
-    - pytablewriter >=0.63
-    # from pytablewriter[html]
     - python-slugify
     - pyyaml
     - termcolor >=2.1
